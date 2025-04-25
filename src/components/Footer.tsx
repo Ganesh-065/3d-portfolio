@@ -25,7 +25,7 @@ export const Footer = () => {
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/p-ganesh-09332b202/",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"

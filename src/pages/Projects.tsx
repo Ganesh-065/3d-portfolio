@@ -11,21 +11,20 @@ export const Projects = () => {
       title: "Hostel finder",
       description:
         "Find Your Perfect Hostel Around the World Discover affordable hostels in top destinations, meet fellow travelers, and create unforgettable memories.",
-      image: "/images/Screenshot 2025-04-23 125543.png",
+      image: "/images/hostel.png",
       tags: ["Three.js", "React", "WebGL", "GSAP"],
       demoLink: "https://hostel-finder-lovat.vercel.app/",
-      codeLink: "https://github.com",
+      codeLink: "", // https://github.com
     },
     {
       id: "project-2",
       title: "E-commerce Platform",
       description:
         "Full-stack e-commerce platform with secure payment processing, user authentication, and product management.",
-      image:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2500&q=80",
+      image: "/images/ecommerce.png",
       tags: ["MongoDB", "Express", "React", "Node.js", "Stripe"],
-      demoLink: "https://example.com",
-      codeLink: "https://github.com",
+      demoLink: "https://next-ecommerce-sepia-zeta.vercel.app/",
+      codeLink: "",
     },
     {
       id: "project-3",

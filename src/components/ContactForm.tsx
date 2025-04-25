@@ -1,19 +1,22 @@
-import { useState, type FormEvent } from 'react';
-import { motion } from 'framer-motion';
+import { useState, type FormEvent } from "react";
+import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState('');
+  const [submitError, setSubmitError] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -21,53 +24,52 @@ export const ContactForm = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitError('');
+    setSubmitError("");
 
-    // For demo purposes, we'll simulate a submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
+    console.log("e", e);
+    const templateParams = {
+      to_name: "Ganesh",
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      to_email: "nrgane06@gmail.com",
+    };
 
-      // Reset form after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
+    emailjs
+      .send(
+        "service_n9bz0aw", // Your EmailJS service ID
+        "template_3fntqnf", // Your EmailJS template ID
+        templateParams,
+        "Qq94shh5k2_3TZ659" // Your EmailJS public key
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Email sent!");
+          setIsSubmitting(false);
+          setSubmitSuccess(true);
 
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
+          // Reset form after success
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
 
-    // In a real application, you would handle actual form submission:
-    /*
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
+          // Hide success after 5s
+          setTimeout(() => {
+            setSubmitSuccess(false);
+          }, 5000);
+        },
+        (err) => {
+          console.error("FAILED...", err);
+          setIsSubmitting(false);
+          setSubmitError("Email failed to send. Please try again.");
+          alert("Email failed to send.");
         }
-        return response.json();
-      })
-      .then(() => {
-        setIsSubmitting(false);
-        setSubmitSuccess(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      })
-      .catch((error) => {
-        setIsSubmitting(false);
-        setSubmitError('Failed to send message. Please try again later.');
-        console.error('Error:', error);
-      });
-    */
+      );
   };
 
   return (
@@ -175,7 +177,7 @@ export const ContactForm = () => {
                 Sending...
               </span>
             ) : (
-              'Send Message'
+              "Send Message"
             )}
           </button>
         </form>
