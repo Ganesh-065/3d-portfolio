@@ -14,7 +14,7 @@ export const Projects = () => {
       image: "/images/hostel.png",
       tags: ["Three.js", "React", "WebGL", "GSAP"],
       demoLink: "https://hostel-finder-lovat.vercel.app/",
-      codeLink: "", // https://github.com
+      codeLink: "https://github.com",
     },
     {
       id: "project-2",
@@ -24,7 +24,7 @@ export const Projects = () => {
       image: "/images/ecommerce.png",
       tags: ["MongoDB", "Express", "React", "Node.js", "Stripe"],
       demoLink: "https://next-ecommerce-sepia-zeta.vercel.app/",
-      codeLink: "",
+      codeLink: "https://github.com",
     },
     {
       id: "project-3",

@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export interface ProjectProps {
   id: string;
@@ -95,7 +95,7 @@ export const ProjectCard = ({ project }: { project: ProjectProps }) => {
       }}
       style={{
         transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-        transformStyle: 'preserve-3d',
+        transformStyle: "preserve-3d",
       }}
     >
       {/* Project Image */}
@@ -138,7 +138,7 @@ export const ProjectCard = ({ project }: { project: ProjectProps }) => {
               Live Demo
             </a>
           )}
-          {project.codeLink && (
+          {/* {project.codeLink && (
             <a
               href={project.codeLink}
               target="_blank"
@@ -147,7 +147,7 @@ export const ProjectCard = ({ project }: { project: ProjectProps }) => {
             >
               View Code
             </a>
-          )}
+          )} */}
         </div>
       </motion.div>
     </motion.div>
