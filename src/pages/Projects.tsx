@@ -28,6 +28,16 @@ export const Projects = () => {
     },
     {
       id: "project-3",
+      title: "SnapEats – Food Delivery App",
+      description:
+        "Food delivery platform that connects users with local restaurants for fast, fresh, and reliable meal delivery. Features include restaurant browsing, real-time tracking, and secure payments.",
+      image: "/images/food.png",
+      tags: ["MongoDB", "Express", "React", "Node.js"],
+      demoLink: "https://food-app-liart-xi.vercel.app/",
+      codeLink: "https://github.com",
+    },
+    {
+      id: "project-4",
       title: "Interactive Data Visualization",
       description:
         "Data visualization dashboard using D3.js and React for displaying complex datasets with interactive features.",
@@ -38,7 +48,7 @@ export const Projects = () => {
       codeLink: "https://github.com",
     },
     {
-      id: "project-4",
+      id: "project-5",
       title: "Real-time Chat Application",
       description:
         "Real-time chat application with private messaging, group chats, and media sharing capabilities.",
@@ -49,7 +59,7 @@ export const Projects = () => {
       codeLink: "https://github.com",
     },
     {
-      id: "project-5",
+      id: "project-6",
       title: "Immersive Portfolio Template",
       description:
         "Portfolio template with immersive 3D elements and smooth animations for creative professionals.",
@@ -60,7 +70,7 @@ export const Projects = () => {
       codeLink: "https://github.com",
     },
     {
-      id: "project-6",
+      id: "project-7",
       title: "Weather Forecast App",
       description:
         "Weather forecast application with location-based services and interactive maps.",
